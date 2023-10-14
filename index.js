@@ -24,7 +24,15 @@ let playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCa
 
 //function for play
 let playRound = (playerChoice, computerChoice) => {
-    if ()
+    // decide who won
+    if (playerChoice === 'rock' && computerChoice === 'paper' || playerChoice === 'paper' && computerChoice === 'scissor' || playerChoice === 'scissor' && computerChoice === 'rock') {
+        //computer won- 1 mark to computer
+        
+    } else if (playerChoice === 'rock' && computerChoice === 'scissor' || playerChoice === 'paper' && computerChoice === 'rock' || playerChoice === 'scissor' && computerChoice === 'rock') {
+        // player won- 1 mark to player
+    } else {
+        // draw- 0 mark to both
+    }
 
 
 }
@@ -32,14 +40,7 @@ let playRound = (playerChoice, computerChoice) => {
 //code for to alert who won in each round
 alert(`You lose ${} beat ${}`)
 
-// decide who won
-if (playerChoice === 'rock' && computerChoice === 'paper' || playerChoice === 'paper' && computerChoice === 'scissor' || playerChoice === 'scissor' && computerChoice === 'rock') {
-    //computer won- 1 mark to computer
-} else if (playerChoice === 'rock' && computerChoice === 'scissor' || playerChoice === 'paper' && computerChoice === 'rock' || playerChoice === 'scissor' && computerChoice === 'rock') {
-    // player won- 1 mark to player
-} else {
-    // draw- 0 mark to both
-}
+
 
 
 //final game function
