@@ -18,7 +18,6 @@ alert("Welcome to Rock Paper Scissor. Do you want to play?");
 
 let playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCase();
 
-console.log(playerChoice);
 
 //function for play
 let playRound = (playerChoice, computerChoice) => {
