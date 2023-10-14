@@ -20,25 +20,44 @@ let playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCa
     while (playerChoice !== 'rock' && playerChoice !== 'paper' && playerChoice !== 'scissor') {
         playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCase();
     };
-    
+
+// get computer choice
+
+let computerChoice = (randomNumber) => {
+
+    if (randomNumber <= 0.34) {
+        computerChoice = 'rock';
+    } else if (randomNumber > 0.34 && randomNumber <= 0.67) {
+        computerChoice = 'paper';
+    } else {
+        computerChoice = 'scissor'
+    }
+    randomNumber(math.random())
+
+}
+
 
 //function for play
 let playRound = (playerChoice, computerChoice) => {
     // decide who won
     if (playerChoice === 'rock' && computerChoice === 'paper' || playerChoice === 'paper' && computerChoice === 'scissor' || playerChoice === 'scissor' && computerChoice === 'rock') {
         //computer won- 1 mark to computer
-        
+        alert(`You lose ${playerChoice} beat ${computerChoice}`);
+
     } else if (playerChoice === 'rock' && computerChoice === 'scissor' || playerChoice === 'paper' && computerChoice === 'rock' || playerChoice === 'scissor' && computerChoice === 'rock') {
         // player won- 1 mark to player
+        alert(`You won ${playerChoice} beat ${computerChoice}`);
     } else {
         // draw- 0 mark to both
+        alert('This round draw');
     }
-
+playRound( playerChoice,"paper")
 
 }
 
 //code for to alert who won in each round
-alert(`You lose ${} beat ${}`)
+
+ //alert(`You lose ${} beat ${}`)
 
 
 
