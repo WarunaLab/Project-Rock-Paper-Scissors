@@ -16,7 +16,7 @@ alert("Welcome to Rock Paper Scissor. Do you want to play?");
 
 //promt for play
 
-let playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCase;
+let playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCase();
 
 console.log(playerChoice);
 
