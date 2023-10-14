@@ -23,16 +23,16 @@ let playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCa
 
 // get computer choice
 
-let computerChoice = (randomNumber) => {
+let computerChoice = () => {
+    const randomNumber = Math.random();
 
     if (randomNumber <= 0.34) {
-        computerChoice = 'rock';
+        return 'rock';
     } else if (randomNumber > 0.34 && randomNumber <= 0.67) {
-        computerChoice = 'paper';
+        return 'paper';
     } else {
-        computerChoice = 'scissor'
+        return 'scissor'
     }
-    randomNumber(math.random())
 
 }
 
@@ -51,8 +51,7 @@ let playRound = (playerChoice, computerChoice) => {
         // draw- 0 mark to both
         alert('This round draw');
     }
-playRound( playerChoice,"paper")
-
+playRound(playerChoice, computerChoice())
 }
 
 //code for to alert who won in each round
