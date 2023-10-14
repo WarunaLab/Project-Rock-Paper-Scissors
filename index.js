@@ -49,11 +49,11 @@ let playRound = (playerChoice, computerChoice) => {
         alert(`You won ${playerChoice} beat ${computerChoice}`);
     } else {
         // draw- 0 mark to both
-        alert('This round draw');
-    }
-playRound(playerChoice, computerChoice())
+        alert('This round draw');}
+ //playRound(playerChoice, computerChoice)
 }
-
+computerChoice = computerChoice();
+playRound(playerChoice, computerChoice);
 //code for to alert who won in each round
 
  //alert(`You lose ${} beat ${}`)
