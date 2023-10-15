@@ -12,18 +12,22 @@
 10. scoring system?
 */
 // Opening..
+
 alert("Welcome to Rock Paper Scissor. Do you want to play?");
 
-//promt for play
+//prompt for play function
 
-let playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCase();
+const playerChoice = () => prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCase();
     while (playerChoice !== 'rock' && playerChoice !== 'paper' && playerChoice !== 'scissor') {
         playerChoice = prompt('Enter your weapon ( Rock, Paper, Scissor)').toLowerCase();
     };
 
-// get computer choice
+// defining the score variables
+let playerScore = 0;
+let computerScore = 0;
 
-let computerChoice = () => {
+// get computer choice function
+const computerChoice = () => {
     const randomNumber = Math.random();
 
     if (randomNumber <= 0.34) {
@@ -37,30 +41,43 @@ let computerChoice = () => {
 }
 
 
-//function for play
-let playRound = (playerChoice, computerChoice) => {
-    // decide who won
-    if (playerChoice === 'rock' && computerChoice === 'paper' || playerChoice === 'paper' && computerChoice === 'scissor' || playerChoice === 'scissor' && computerChoice === 'rock') {
-        //computer won- 1 mark to computer
-        alert(`You lose ${playerChoice} beat ${computerChoice}`);
 
-    } else if (playerChoice === 'rock' && computerChoice === 'scissor' || playerChoice === 'paper' && computerChoice === 'rock' || playerChoice === 'scissor' && computerChoice === 'rock') {
-        // player won- 1 mark to player
-        alert(`You won ${playerChoice} beat ${computerChoice}`);
-    } else {
-        // draw- 0 mark to both
-        alert('This round draw');}
- //playRound(playerChoice, computerChoice)
+
+
+// game
+let game = () => {
+
+    const playRound = (playerChoice, computerChoice) => { //play round function
+            
+            if (playerChoice === 'rock' && computerChoice === 'paper' || playerChoice === 'paper' && computerChoice === 'scissor' || playerChoice === 'scissor' && computerChoice === 'rock') {
+                //computer won- 1 mark to computer
+                alert(`You lose ${playerChoice} beat ${computerChoice}`);
+                computerScore += 1;
+            
+        
+            } else if (playerChoice === 'rock' && computerChoice === 'scissor' || playerChoice === 'paper' && computerChoice === 'rock' || playerChoice === 'scissor' && computerChoice === 'rock') {
+                // player won- 1 mark to player
+                alert(`You won ${playerChoice} beat ${computerChoice}`);
+                playerScore += 1;
+            } else {
+                // draw- 0 mark to both
+                alert('This round draw');}
+        
+        
+        }
+        computerChoice = computerChoice();
+        playerChoice = playerChoice();
+        playRound(playerChoice, computerChoice);
+
 }
-computerChoice = computerChoice();
-playRound(playerChoice, computerChoice);
-//code for to alert who won in each round
-
- //alert(`You lose ${} beat ${}`)
-
-
-
 
 //final game function
+
+// who won
+if (playerScore > computerScore) {
+    alert('Congratulations, you Win');
+} else {
+    alert('Try again, the computer is the winner');
+}
 
     
